@@ -1,11 +1,9 @@
 const fillColor = "rgb(255, 137, 18)"
 
 
-const hello = new Word("hello")
-hello.render()
-
-const hand = new Word('hand')
-hand.render()
+const start = new Word('Start', 'h1', 'main', log).render()
+const accountWord = new Word('Account', 'h2', 'nav', account).render()
+const scoresWord = new Word('Scores', 'h2', 'nav', account).render()
 
 function handleType(key){
     for(word of Word.all){
@@ -19,6 +17,18 @@ function handleType(key){
             word.reset()
         }
     }
+}
+
+function log(){
+    console.log("This means the word completed!")
+}
+
+function account(){
+    console.log("This will render the account stuff")
+}
+
+function scores(){
+    console.log("This will render the scores.")
 }
 
 document.addEventListener('keydown', (e) => handleType(e.key))

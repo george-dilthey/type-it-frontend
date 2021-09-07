@@ -2,6 +2,25 @@ body {
     background-color: #24292e;
 }
 
+nav {
+    display: flex;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50em;
+}
+
 h1 {
     color: #aec6cf;
+    
+    font-size: 4em;
+}
+
+h2 {
+    color: #aec6cf;
+    margin: 10px; 
+
 }
