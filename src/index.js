@@ -22,16 +22,19 @@ function scores(){
 //eventListener
 document.addEventListener('keydown', (e) => handleType(e.key))
 
-function handleType(key){
-    for(word of Word.all){
-        let letter = word.letters.find(l => l.html.innerText.toLowerCase() == key.toLowerCase() && l.color == "")
 
-        if(letter && letter.validate()){
-            letter.fill()
-            word.check()
-        } 
-        else{
-            word.reset()
+function handleType(key){
+    if(key != "Shift"){
+        for(word of Word.all){
+            let letter = word.letters.find(l => l.html.innerText.toLowerCase() == key.toLowerCase() && l.color == "")
+
+            if(letter && letter.validate()){
+                letter.fill()
+                word.check()
+            } 
+            else{
+                word.reset()
+            }
         }
     }
 }
