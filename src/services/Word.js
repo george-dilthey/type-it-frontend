@@ -1,11 +1,13 @@
 class Word {
 
+    static all = []
     constructor(word){
         this.word = word
         this.letters = word.split("").map(l => new Letter(l))
+        this.constructor.all.push(this)
     }
 
-    renderWord = () => {
+    render = () => {
         const main = document.querySelector('main')
         const wordElement = document.createElement('h1')
         wordElement.setAttribute('data-word', 'true')
@@ -15,11 +17,16 @@ class Word {
         main.appendChild(wordElement)
     }
 
-    static checkWord = () => {
-        let letters = w.letters
+     check = () => {
+        let letters = this.letters
 
-        if((letters.find(e => e.style.color == "") == undefined))
+        if((letters.find(l => l.color == "") == undefined))
             console.log("Found a word!")
-
-    } 
+    }
+    
+    reset = () => {
+        for(const letter of this.letters){
+            letter.color = ""
+        }
+    }
 }
