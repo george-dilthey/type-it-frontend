@@ -1,14 +1,14 @@
 const fillColor = "rgb(255, 137, 18)"
 
 
-const start = new Word('Start', 'h1', 'main', log).render()
+const startWord = new Word('Start', 'h1', 'main', start).render()
 const accountWord = new Word('Account', 'h2', 'nav', account).render()
-const scoresWord = new Word('Scores', 'h2', 'nav', account).render()
+const scoresWord = new Word('Scores', 'h2', 'nav', scores).render()
 
 
 //temp functions
-function log(){
-    console.log("This means the word completed!")
+function start(){
+    console.log("This will start the game!")
 }
 
 function account(){

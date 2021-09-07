@@ -17,6 +17,7 @@ main {
 h1 {
     color: #aec6cf;
     font-size: 4em;
+    text-align: center;
 }
 
 h2 {
@@ -27,4 +28,5 @@ h2 {
 
 h3 {
     color: #aec6cf;
+    text-align: center;
 }
