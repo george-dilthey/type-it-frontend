@@ -1,13 +1,14 @@
 const fillColor = "rgb(255, 137, 18)"
+const wordApi = new WordApiService()
 
-
-const startWord = new Word('Start', 'h1', 'main', start).render()
+const startWord = new Word('Start', 'h1', 'main', startGame).render()
 const accountWord = new Word('Account', 'h2', 'nav', account).render()
 const scoresWord = new Word('Scores', 'h2', 'nav', scores).render()
 
 
 //temp functions
-function start(){
+function startGame(){
+    Game.getWords()
     console.log("This will start the game!")
 }
 
