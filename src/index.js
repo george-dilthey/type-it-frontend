@@ -1,3 +1,6 @@
+const fillColor = "rgb(255, 137, 18)"
+
+
 const hello = new Word("hello")
 hello.render()
 

@@ -1,3 +1,4 @@
+
 class Letter {
 
     constructor(letter){
@@ -17,14 +18,14 @@ class Letter {
 
     validate = () => {
         if(this.color == ""){
-            if(this.html.previousElementSibling == null || this.html.previousElementSibling.style.color == "blue"){
+            if(this.html.previousElementSibling == null || this.html.previousElementSibling.style.color == fillColor){
                 return true
             }
         }  
     }
 
     fill = () => {
-        this.html.style.color = "blue";
+        this.html.style.color = fillColor;
     }
     
 }
