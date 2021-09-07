@@ -10,12 +10,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50em;
+    height: 100vh;
+    flex-direction: column;
 }
 
 h1 {
     color: #aec6cf;
-    
     font-size: 4em;
 }
 
@@ -23,4 +23,8 @@ h2 {
     color: #aec6cf;
     margin: 10px; 
 
+}
+
+h3 {
+    color: #aec6cf;
 }
