@@ -18,7 +18,7 @@ class Game {
         const main = document.querySelector('main')
         main.innerHTML = ""
         for(word of words){
-            word.render()
+            this.turn(word)
         }
     }
 
