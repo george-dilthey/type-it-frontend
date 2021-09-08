@@ -8,7 +8,7 @@ const scoresWord = new Word('Scores', 'h2', 'nav', scores).render()
 
 //temp functions
 function startGame(){
-    Game.getWords()
+    const game = new Game().start()
     console.log("This will start the game!")
 }
 
