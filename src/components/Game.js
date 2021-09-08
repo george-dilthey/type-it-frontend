@@ -1,7 +1,9 @@
 class Game {
     
+    
     constructor(){
-        this.turnIndex = 0   
+        this.turnIndex = 0
+        this.strikes = 0   
     }
 
     start = () => {
@@ -16,10 +18,17 @@ class Game {
     }
 
     turn = () => {
-        const main = document.querySelector('main')
         main.innerHTML = ""
-        this.words[this.turnIndex].render()
+        let word = this.words[this.turnIndex]
+        
+        word.game = this
+        word.render()
+
         this.turnIndex ++
+    }
+
+    renderStrikes = () => {
+
     }
 
 }

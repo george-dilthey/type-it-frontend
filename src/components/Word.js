@@ -12,6 +12,14 @@ class Word {
         
     }
 
+    get game(){
+        return this._game
+    }
+
+    set game(game){
+        this._game = game
+    }
+
     render = () => {
         const parent = document.querySelector(this.parent)
         const wordElement = document.createElement(this.tag)
@@ -34,6 +42,8 @@ class Word {
     reset = () => { 
         for(const letter of this.letters){
             letter.color = ""
-        }  
+        }
+        
+        this.game ? this.game.strikes ++ : null
     }
 }

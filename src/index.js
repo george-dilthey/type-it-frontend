@@ -1,5 +1,7 @@
 const fillColor = "rgb(255, 137, 18)"
 const wordApi = new WordApiService()
+const main = document.querySelector('main')
+
 
 const startWord = new Word('Start', 'h1', 'main', startGame).render()
 const accountWord = new Word('Account', 'h2', 'nav', account).render()
