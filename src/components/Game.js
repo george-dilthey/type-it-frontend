@@ -19,16 +19,23 @@ class Game {
 
     turn = () => {
         main.innerHTML = ""
+        this.renderStrikes()
         let word = this.words[this.turnIndex]
         
         word.game = this
         word.render()
 
-        this.turnIndex ++
+        this.turnIndex++
     }
 
     renderStrikes = () => {
-
+        let strikes = this.strikes
+        let arr = [...Array(strikes)]
+        let strikeElement = document.querySelector('.strikes h1')
+        strikeElement.innerHTML = ""
+        for(const a of arr){
+            strikeElement.innerHTML += "X "
+        }
     }
 
 }
