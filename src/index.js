@@ -2,6 +2,7 @@ const fillColor = "rgb(255, 137, 18)"
 const wordApi = new WordApiService()
 const main = document.querySelector('main')
 const nav = document.querySelector('nav')
+const strikesElement = document.querySelector('.strikes h1')
 
 
 
@@ -29,6 +30,7 @@ document.addEventListener('keydown', (e) => handleType(e.key))
 function handleType(key){
     if(key != "Shift"){
         for(word of Word.all.filter(w => w.rendered)){
+            console.log(word)
             let letter = word.letters.find(l => l.html.innerText.toLowerCase() == key.toLowerCase() && l.color == "")
 
             if(letter && letter.validate()){

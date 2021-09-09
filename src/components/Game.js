@@ -29,12 +29,21 @@ class Game {
 
     renderStrikes = () => {
         let strikes = this.strikes
+        
         let arr = [...Array(strikes)]
-        let strikeElement = document.querySelector('.strikes h1')
-        strikeElement.innerHTML = ""
+        strikesElement.innerHTML = ""
         for(const a of arr){
-            strikeElement.innerHTML += "X "
+            strikesElement.innerHTML += "X "
         }
+        if(strikes >= 5)
+            this.gameOver()
+    }
+
+    gameOver = () => {
+        this.strikes = 0
+        this.turnIndex = 0
+        Word.all = []
+        DomService.renderHome()
     }
 
 }
