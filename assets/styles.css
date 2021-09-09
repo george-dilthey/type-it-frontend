@@ -6,6 +6,15 @@ nav {
     display: flex;
 }
 
+.menu {
+    display: flex;
+}
+
+.score {
+    display: flex;
+    margin-left: auto;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -27,10 +36,34 @@ h1 {
 h2 {
     color: #aec6cf;
     margin: 10px; 
-
 }
 
 h3 {
     color: #aec6cf;
     text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--main-color-transparent); /* Fallback color */
+}
+
+.modal-content {
+    background-color: black;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
 }

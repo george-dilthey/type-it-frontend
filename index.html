@@ -8,6 +8,7 @@
     <script src="./src/components/Word.js"></script>
     <script src="./src/components/Letter.js"></script>
     <script src="./src/components/Game.js"></script>
+    <script src="./src/components/Modal.js"></script>
     <script src="./src/services/DomService.js"></script>
     <script src="./src/services/WordApiService.js"></script>
     <script defer src="./src/index.js"></script>
@@ -16,13 +17,23 @@
     <title>Type It</title>
 </head>
 <body>
-    <nav></nav>
+    <nav>
+        <div class=menu></div>
+        <div class=score></div>
+    </nav>
     <div class=strikes><h1 style="color: red"></h1></div>
     <main>
         <div class = "intro">
             
         </div> 
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close"></span>
+          <div id="modal-main"></div>
+        </div>
+      </div>
     
 </body>
 </html>

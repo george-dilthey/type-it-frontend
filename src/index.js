@@ -1,23 +1,13 @@
 const fillColor = "rgb(255, 137, 18)"
 const wordApi = new WordApiService()
-const main = document.querySelector('main')
-const nav = document.querySelector('nav')
-const strikesElement = document.querySelector('.strikes h1')
 
+const main = document.querySelector('main')
+const menu = document.querySelector('.menu')
+const strikesElement = document.querySelector('.strikes h1')
+const scoreElement = document.querySelector('.score')
 
 
 DomService.renderHome()
-
-
-//temp functions
-function startGame(){
-    const game = new Game().start()
-    console.log("This will start the game!")
-}
-
-function account(){
-    console.log("This will render the account stuff")
-}
 
 function scores(){
     console.log("This will render the scores.")

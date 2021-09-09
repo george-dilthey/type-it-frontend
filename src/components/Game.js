@@ -25,6 +25,7 @@ class Game {
         word.game = this
         word.render()
 
+        this.renderScore()
         this.turnIndex++
     }
 
@@ -38,6 +39,12 @@ class Game {
         }
         if(strikes >= 5)
             this.gameOver()
+    }
+
+    renderScore = () => {
+        let score = this.turnIndex
+        scoreElement.innerHTML = `<h2>${score}</h2>`
+
     }
 
     gameOver = () => {
