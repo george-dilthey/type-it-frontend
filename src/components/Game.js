@@ -11,7 +11,8 @@ class Game {
             const arr = Object.keys(data);
             const shuffled = arr.sort(() => 0.5 - Math.random());
             let final = shuffled.slice(0,100)
-            let words = final.map(w => new Word(w, 'h1', 'main', this.turn))
+            let words = final.map(w => new Word(w, 'h1', 'main', this.turn)
+            )
             this.words = words
             this.turn()
         }) 
