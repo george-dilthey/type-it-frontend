@@ -18,8 +18,7 @@ class Game {
     }
 
     turn = () => {
-        main.innerHTML = ""
-        this.renderStrikes()
+        DomService.renderGame()
         let word = this.words[this.turnIndex]
         
         word.game = this

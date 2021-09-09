@@ -6,6 +6,7 @@ class Word {
         this.tag = tag
         this.parent = parent
         this.completeFunc = completeFunc
+        this.rendered = false
 
         this.letters = word.split("").map(l => new Letter(l))
         this.constructor.all.push(this)
@@ -28,23 +29,28 @@ class Word {
             wordElement.appendChild(letter.html)
         }
         parent.appendChild(wordElement)
+        this.rendered = true
     }
 
     check = () => {
         let letters = this.letters
 
         if((letters.find(l => l.color == "") == undefined)){
-            this.completeFunc()
             setTimeout(() => {this.reset()}, 100)
+            this.completeFunc()
         }
     }
     
     reset = () => { 
         for(const letter of this.letters){
             letter.color = ""
-        }
-        
+        }  
+    }
+
+    addStrike = () => {
         this.game ? this.game.strikes++ : null
         this.game ? this.game.renderStrikes() : null
     }
+
+    
 }

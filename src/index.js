@@ -1,11 +1,11 @@
 const fillColor = "rgb(255, 137, 18)"
 const wordApi = new WordApiService()
 const main = document.querySelector('main')
+const nav = document.querySelector('nav')
 
 
-const startWord = new Word('Start', 'h1', 'main', startGame).render()
-const accountWord = new Word('Account', 'h2', 'nav', account).render()
-const scoresWord = new Word('Scores', 'h2', 'nav', scores).render()
+
+DomService.renderHome()
 
 
 //temp functions
@@ -28,7 +28,7 @@ document.addEventListener('keydown', (e) => handleType(e.key))
 
 function handleType(key){
     if(key != "Shift"){
-        for(word of Word.all){
+        for(word of Word.all.filter(w => w.rendered)){
             let letter = word.letters.find(l => l.html.innerText.toLowerCase() == key.toLowerCase() && l.color == "")
 
             if(letter && letter.validate()){
@@ -37,6 +37,7 @@ function handleType(key){
             } 
             else{
                 word.reset()
+                word.addStrike()
             }
         }
     }
