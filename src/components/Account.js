@@ -18,6 +18,8 @@ class Account {
 
     static handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target.username.value)
+        api.login(e.target.username.value).then(user => {
+            new User(user).renderScores()
+        })
     }
 }

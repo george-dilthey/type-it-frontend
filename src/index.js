@@ -19,6 +19,7 @@
 
 const fillColor = "rgb(255, 137, 18)"
 const wordApi = new WordApiService()
+const api = new ApiService()
 const modal = new Modal()
 
 const main = document.querySelector('main')
