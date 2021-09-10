@@ -1,6 +1,5 @@
 class Game {
     
-    
     constructor(){
         this.turnIndex = 0
         this.strikes = 0   
