@@ -14,6 +14,8 @@ class Account {
         modal.main.querySelector("form").addEventListener("submit", this.handleSubmit)
 
         modal.open()
+        modal.main.querySelector('form input').focus();
+
     }
 
     static handleSubmit = (e) => {

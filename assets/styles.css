@@ -69,3 +69,20 @@ h3 {
     font-size: 14px;
     font-weight: bold;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #aec6cf;
+  text-align: center;
+  padding: 8px;
+  color: black;
+}
+
+tr {
+  background-color: #aec6cf;
+}
