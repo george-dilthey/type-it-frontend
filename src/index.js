@@ -22,6 +22,8 @@ const wordApi = new WordApiService()
 const api = new ApiService()
 const modal = new Modal()
 
+let currentUser = null
+
 const main = document.querySelector('main')
 const menu = document.querySelector('.menu')
 const strikesElement = document.querySelector('.strikes h1')
