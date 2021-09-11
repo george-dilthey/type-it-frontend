@@ -12,6 +12,17 @@ class ApiService {
         .then(response => response.json())
     }
 
+    postScore = (score, id) => {
+        return fetch("http://localhost:3000/scores", {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({score: score, user_id:id}),
+        })
+        .then(response => response.json())
+    }
+
     getUserScores = (id) => {
         return fetch(`http://localhost:3000/users/${id}`).then(res=>res.json())
     }
