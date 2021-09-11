@@ -11,4 +11,11 @@ class ApiService {
         })
         .then(response => response.json())
     }
+
+    getScores = () => {
+       return  fetch("http://localhost:3000/scores").then(res=>res.json())
+    }
+
+    
+
 }

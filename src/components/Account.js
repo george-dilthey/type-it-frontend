@@ -1,7 +1,7 @@
 class Account {
 
     static openModal = () =>{
-
+        modal.close()
         modal.main.innerHTML = `
         <br><br>
         <h3>Account</h3>

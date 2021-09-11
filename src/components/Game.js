@@ -37,7 +37,7 @@ class Game {
             strikesElement.innerHTML += "X "
         }
         if(strikes >= 5)
-            this.gameOver()
+            this.renderGameOver()
     }
 
     renderScore = () => {
@@ -46,11 +46,18 @@ class Game {
 
     }
 
-    gameOver = () => {
+    renderGameOver = () => {
+        Word.all = []
+        
+        modal.main.innerHTML = `
+        <br><br>
+        <h3>Game Over!</h3>
+        <h1>${this.turnIndex -1} Words Typed</h1>`
+
+        modal.open()
+
         this.strikes = 0
         this.turnIndex = 0
-        Word.all = []
-        DomService.renderHome()
     }
 
 }
