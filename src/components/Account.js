@@ -4,8 +4,7 @@ class Account {
         modal.close()
 
         if(currentUser){
-            console.log("user found!")
-            currentUser.renderScores()
+            currentUser.renderUserScores()
         }
 
         else {
@@ -31,7 +30,7 @@ class Account {
         
         api.findOrCreateUser(e.target.username.value).then((user)  => {
             const newUser = new User(user)
-            newUser.renderScores()
+            newUser.renderUserScores()
             currentUser = newUser
         })
         

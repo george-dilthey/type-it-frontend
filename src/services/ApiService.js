@@ -11,6 +11,10 @@ class ApiService {
         })
         .then(response => response.json())
     }
+
+    getUserScores = (id) => {
+        return fetch(`http://localhost:3000/users/${id}`).then(res=>res.json())
+    }
     
 
     getScores = () => {
