@@ -33,4 +33,14 @@ class User {
         })
     }
 
+    static handleSubmit = (e) => {
+        e.preventDefault()
+        
+        api.findOrCreateUser(e.target.username.value).then((user)  => {
+            const newUser = new User(user)
+            newUser.renderUserScores()
+            currentUser = newUser
+        })
+    }
+
 }
