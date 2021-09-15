@@ -13,6 +13,7 @@ class Game {
             let words = final.map(w => new Word(w, 'h1', 'main', this.turn)
             )
             this.words = words
+            this.startTimer()
             this.turn()
         }) 
     }
@@ -52,6 +53,7 @@ class Game {
 
     gameOver = () => {
         Word.all = []
+        timerElement.innerHTML = ""
         const finalScore = this.turnIndex-1
         
         if(currentUser){
@@ -71,7 +73,18 @@ class Game {
         this.turnIndex = 0
     }
 
-    
-
+    startTimer = () => {
+        timerElement.innerHTML = '60'
+        let count = 59
+        const timer = setInterval(() => {
+            if(count <= 0){
+              clearInterval(timer);
+              this.gameOver()
+            } else {
+              timerElement.innerHTML = count;
+            }
+            count -= 1;
+          }, 1000);
+    }  
 }
 

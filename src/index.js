@@ -28,6 +28,7 @@ const main = document.querySelector('main')
 const menu = document.querySelector('.menu')
 const strikesElement = document.querySelector('.strikes h1')
 const scoreElement = document.querySelector('.score')
+const timerElement = document.querySelector('.timer h1')
 
 
 

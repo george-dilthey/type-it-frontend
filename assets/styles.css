@@ -27,6 +27,10 @@ div.strikes{
     height: 1em;
 }
 
+div.timer{
+    height: 1em;
+}
+
 h1 {
     color: #aec6cf;
     font-size: 4em;
@@ -86,3 +90,13 @@ td, th {
 tr {
   background-color: #aec6cf;
 }
+
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
