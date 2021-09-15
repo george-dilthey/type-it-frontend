@@ -22,6 +22,7 @@ const wordApi = new WordApiService()
 const api = new ApiService()
 const modal = new Modal()
 
+let timer = ""
 let currentUser = null
 
 const main = document.querySelector('main')

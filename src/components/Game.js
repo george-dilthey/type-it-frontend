@@ -54,6 +54,7 @@ class Game {
     gameOver = () => {
         Word.all = []
         timerElement.innerHTML = ""
+        clearInterval(timer)
         const finalScore = this.turnIndex-1
         
         if(currentUser){
@@ -76,7 +77,7 @@ class Game {
     startTimer = () => {
         timerElement.innerHTML = '60'
         let count = 59
-        const timer = setInterval(() => {
+        timer = setInterval(() => {
             if(count <= 0){
               clearInterval(timer);
               this.gameOver()
