@@ -44,7 +44,8 @@ class Word {
     reset = () => { 
         for(const letter of this.letters){
             letter.color = ""
-        }  
+        }
+  
     }
 
     

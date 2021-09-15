@@ -53,6 +53,7 @@ function handleType(key){
             else{
                 word.reset()
                 word.game ? word.game.addStrike() : null
+
             }
         }
     }

@@ -42,28 +42,30 @@ class Game {
             strikesElement.innerHTML += "X "
         }
         if(strikes >= 5)
-            this.renderGameOver()
+            this.gameOver()
     }
 
     renderScore = () => {
         let score = this.turnIndex
         scoreElement.innerHTML = `<h2>${score}</h2>`
-
     }
 
-    renderGameOver = () => {
+    gameOver = () => {
         Word.all = []
-
         const finalScore = this.turnIndex-1
-
-        api.postScore(finalScore, currentUser.id)
         
-        modal.main.innerHTML = `
-        <br><br>
-        <h3>Game Over!</h3>
-        <h1>${finalScore} Words Typed</h1>`
-
-        modal.open()
+        if(currentUser){
+            api.postScore(finalScore, currentUser.id)
+        
+            modal.main.innerHTML = `
+            <br><br>
+            <h3>Game Over!</h3>
+            <h1>${finalScore} Words Typed</h1>`
+            modal.open()
+        }
+        else{
+            DomService.openGameOverAccountModal(finalScore)
+        }
 
         this.strikes = 0
         this.turnIndex = 0
