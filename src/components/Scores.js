@@ -1,10 +1,6 @@
 class Scores {
     
-    static openModal = () => {
-        modal.close()
-        this.getScores()
-        modal.open()
-    }
+    
 
     static getScores = () => {
         api.getScores().then(scores => this.renderScores(scores))
