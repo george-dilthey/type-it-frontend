@@ -11,7 +11,6 @@ class DomService {
 
     static renderGame(){
         this.clear()
-        
     }
 
     static clear(){

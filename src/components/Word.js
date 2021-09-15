@@ -47,10 +47,7 @@ class Word {
         }  
     }
 
-    addStrike = () => {
-        this.game ? this.game.strikes++ : null
-        this.game ? this.game.renderStrikes() : null
-    }
+    
 
     
 }

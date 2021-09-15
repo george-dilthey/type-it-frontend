@@ -52,7 +52,7 @@ function handleType(key){
             } 
             else{
                 word.reset()
-                word.addStrike()
+                word.game ? word.game.addStrike() : null
             }
         }
     }

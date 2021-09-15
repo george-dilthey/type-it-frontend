@@ -28,6 +28,11 @@ class Game {
         this.turnIndex++
     }
 
+    addStrike = () => {
+        this.strikes++
+        this.renderStrikes()
+    }
+
     renderStrikes = () => {
         let strikes = this.strikes
         
@@ -63,6 +68,8 @@ class Game {
         this.strikes = 0
         this.turnIndex = 0
     }
+
+    
 
 }
 
