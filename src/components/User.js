@@ -39,9 +39,8 @@ class User {
         api.findOrCreateUser(e.target.username.value).then((user)  => {
             const newUser = new User(user)
             currentUser = newUser
-            score != null ? api.postScore(score, currentUser.id) : null
-            setTimeout(newUser.renderUserScores(), 3000);  
-        })
+        }).then(() => score != null ? api.postScore(score, currentUser.id) : null
+        ).then(() => currentUser.renderUserScores())
     }
 
 }
