@@ -74,7 +74,7 @@ class DomService {
 
     static openScoresModal = () => {
         modal.close()
-        Scores.getScores()
+        Score.getScores()
         modal.open()
     }
 

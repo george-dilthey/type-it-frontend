@@ -1,13 +1,17 @@
-class Scores {
+class Score {
     
-    
+    constructor(data){
+        this.score = data.score
+        this.created_at = new Date(data.created_at)
+        this.id = data.id
+    }
 
     static getScores = () => {
         api.getScores().then(scores => this.renderScores(scores))
     }
 
     static renderScores = (scores) => {
-        
+
         modal.main.innerHTML = `
         <br><br>
         <h3>High Scores:</h3>
@@ -28,6 +32,10 @@ class Scores {
             
             modal.main.querySelector('table').appendChild(row)
         }
+    }
+
+    deleteScore = () => {
+        api.deleteScore(this.id).then(data => currentUser.renderUserScores())
     }
 
 }

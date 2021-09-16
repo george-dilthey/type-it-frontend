@@ -3,7 +3,7 @@ class ApiService {
 
     findOrCreateUser = (username) => {
         return fetch("http://localhost:3000/users", {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
             'Content-Type': 'application/json',
             },
@@ -32,6 +32,9 @@ class ApiService {
        return  fetch("http://localhost:3000/scores").then(res=>res.json())
     }
 
-    
-
+    deleteScore = (id) => {
+        return fetch(`http://localhost:3000/scores/${id}`, {
+            method: 'DELETE'
+        })
+    }
 }

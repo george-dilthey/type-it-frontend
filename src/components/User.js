@@ -7,7 +7,10 @@ class User {
     }
 
     renderUserScores = () => {
-
+        Word.all = Word.all.filter(word => {
+            console.log(word.word)
+            word.word.match(/^DELETE/) != null
+        })
         api.getUserScores(this.id).then(data => {
             
             this.scores = data.scores
@@ -17,18 +20,27 @@ class User {
             <h3>Welcome ${this.username}! Here are your scores:</h3>
             <table>
                 <tr>
+                    <th>#</th>
                     <th>Date</th>
                     <th>Score</th>
+                    <th></th>
                 </tr>
             </table>`
 
-            for(const score of this.scores){
-                const date = new Date(score.created_at).toLocaleString()
+            for(const [index, data] of this.scores.entries()){
+                const score = new Score(data)
+                const date = score.created_at.toLocaleString()
                 const number = score.score
                 const row = document.createElement('tr')
-                row.innerHTML = `<td>${date}</td><td>${number}</td>`
+
+                let rowNumber = index+1
+                let deleteButton = new Word(`DELETE${rowNumber}`, "p", `.data-${rowNumber}`, score.deleteScore)
+                
+                row.innerHTML = `<td>${rowNumber}</td><td>${date}</td><td>${number}</td><td class = "data-${rowNumber}"></td>`
                 
                 modal.main.querySelector('table').appendChild(row)
+                deleteButton.render()
+
             }
         })
     }
@@ -42,5 +54,4 @@ class User {
         }).then(() => score != null ? api.postScore(score, currentUser.id) : null
         ).then(() => currentUser.renderUserScores())
     }
-
 }
