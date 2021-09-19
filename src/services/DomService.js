@@ -53,7 +53,6 @@ class DomService {
     }
 
     static openGameOverAccountModal = (score) =>{
-        console.log(score)
         modal.close()
 
         modal.main.innerHTML = `

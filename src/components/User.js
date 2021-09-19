@@ -7,10 +7,8 @@ class User {
     }
 
     renderUserScores = () => {
-        Word.all = Word.all.filter(word => {
-            console.log(word.word)
-            word.word.match(/^DELETE/) != null
-        })
+        const regex = new RegExp('^CLOSE|^ACCOUNT|^SCORES', 'ig');
+        Word.all = Word.all.filter(word => word.word.match(regex))
         api.getUserScores(this.id).then(data => {
             
             this.scores = data.scores
