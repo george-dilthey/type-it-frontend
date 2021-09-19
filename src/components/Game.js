@@ -19,7 +19,7 @@ class Game {
     }
 
     turn = () => {
-        DomService.renderGame()
+        DomService.clear()
         let word = this.words[this.turnIndex]
         
         word.game = this

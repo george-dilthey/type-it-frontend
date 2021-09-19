@@ -9,10 +9,6 @@ class DomService {
         const scoresWord = new Word('Scores', 'h2', '.menu', this.openScoresModal).render()  
     }
 
-    static renderGame(){
-        this.clear()
-    }
-
     static clear(){
         main.innerHTML = ""
         menu.innerHTML = ""
