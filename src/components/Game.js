@@ -67,7 +67,7 @@ class Game {
             modal.open()
         }
         else{
-            DomService.openGameOverAccountModal(finalScore)
+            DomService.openAccountModal(finalScore)
         }
 
         this.strikes = 0

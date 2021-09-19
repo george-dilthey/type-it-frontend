@@ -15,6 +15,7 @@ class Modal {
     open = () => {
         this.modal.style.display = "block"
         new Word('CLOSE', 'h3', 'div.modal-content span.close', this.close).render()
+        
     }
     
     close = () => {

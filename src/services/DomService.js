@@ -27,11 +27,23 @@ class DomService {
         scoreElement.innerHTML = ""
     }
 
-    static openAccountModal = () =>{
+    static openAccountModal = (finalScore) =>{
         modal.close()
 
         if(currentUser){
             currentUser.renderUserScores()
+        }
+
+        else if(finalScore) {
+            modal.main.innerHTML = `
+            <br><br>
+            <h3>Account</h3>
+            <h4>Enter your username to save your score:</h4>
+            <form>
+                <input type="text" id="username" name="username"<br><br>
+                <input type="submit" value="Submit">
+            </form>`
+            modal.main.querySelector("form").addEventListener("submit", (e) =>  User.handleSubmit(e, finalScore))
         }
 
         else {
@@ -49,26 +61,14 @@ class DomService {
         }
 
         modal.open()
-
-    }
-
-    static openGameOverAccountModal = (score) =>{
-        modal.close()
-
-        modal.main.innerHTML = `
-        <br><br>
-        <h3>Account</h3>
-        <h4>Enter your username to save your score:</h4>
-        <form>
-            <input type="text" id="username" name="username"<br><br>
-            <input type="submit" value="Submit">
-        </form>`
-
-        modal.main.querySelector("form").addEventListener("submit", (e) =>  User.handleSubmit(e, score))
-        modal.main.querySelector('form input').focus();
         
-        modal.open()
+        setTimeout(function(){
+            let input = document.querySelector('#username')
+            input ? input.focus() : null
+            input ? input.value = "" : null
+        }, 100);
 
+        
     }
 
     static openScoresModal = () => {

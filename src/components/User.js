@@ -21,7 +21,7 @@ class User {
                     <th>#</th>
                     <th>Date</th>
                     <th>Score</th>
-                    <th></th>
+                    <th>Delete?</th>
                 </tr>
             </table>`
 
